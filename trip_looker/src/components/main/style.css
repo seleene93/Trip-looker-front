@@ -1,0 +1,50 @@
+body {
+  background-image: url("/public/img/playa.jpg");
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  margin: 10rem;
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+}
+
+input {
+  width: 20rem;
+  height: 2rem;
+  padding: 0.5rem;
+  background: rgba(240, 248, 255, 0.253);
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin-top: 0.25rem;
+}
+
+button {
+  height: 2rem;
+}
+
+button img {
+  width: 2rem;
+  margin-top: -8rem;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.582);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  background: none;
+  outline: none;
+}
