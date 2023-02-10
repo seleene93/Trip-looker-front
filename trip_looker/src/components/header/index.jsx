@@ -27,8 +27,10 @@ export const Header = () => {
         </section>
 
         <section>
-          <img src="/iconos/about.png" alt="icono experiencias"></img>
-          <button>Conócenos</button>
+          <img src="/iconos/about.png" alt="icono about"></img>
+          <NavLink to="/conocenos">
+            <button>Conócenos</button>
+          </NavLink>
         </section>
 
         <section>

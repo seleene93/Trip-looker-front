@@ -6,8 +6,9 @@ select {
   border: 1px solid #000000;
   border-radius: 8px;
   margin-top: 0.25rem;
+  font-size: 10px;
 }
 
-.form {
-  height: 100;
+#filtros {
+  margin-bottom: 3rem;
 }

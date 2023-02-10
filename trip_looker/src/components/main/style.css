@@ -2,12 +2,6 @@ body {
   background-image: url("/public/img/playa.jpg");
 }
 
-main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-
 .form {
   margin: 10rem;
 }

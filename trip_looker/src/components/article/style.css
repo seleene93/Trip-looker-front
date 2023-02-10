@@ -1,0 +1,45 @@
+ul {
+  list-style: none;
+}
+
+article {
+  width: 16rem;
+  height: auto;
+  background-color: aliceblue;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+li img {
+  width: 85%;
+  height: 10rem;
+  margin: 1rem;
+}
+
+li:nth-child(2) {
+  text-align: center;
+}
+
+li:nth-child(3),
+li:nth-child(4),
+li:nth-child(5) {
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+}
+
+li:nth-child(5) {
+  margin-top: 0.5rem;
+}
+
+.botones {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+#detalle {
+  margin-top: -0.2rem;
+}
