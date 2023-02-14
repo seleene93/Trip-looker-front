@@ -55,8 +55,45 @@ main {
 }
 
 .contenedor-lista {
-  width: 100%;
+  width: 90rem;
   min-height: 60vh;
-  flex-wrap: wrap;
-  justify-content: space-around;
+}
+
+.cardLoginOrRegister {
+  height: 45.4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form-card input {
+  border-radius: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.p-inputs-esp {
+  margin: 0.5rem;
+  width: auto;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.534);
+}
+
+.section-inputs-esp {
+  font-size: 0.8rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.inputs-esp {
+  border: none !important;
+  width: 9rem;
 }

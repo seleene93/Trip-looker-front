@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import "./style.css";
 
 export const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+
   return (
     <header>
       <NavLink to="/">
         <div className="logo">
-          <img src="/logo/Ilustracion_sin_titulo_2.png" alt="foto"></img>
+          <img src="/logo/Ilustracion_sin_titulo_2.png" alt="logo"></img>
         </div>
       </NavLink>
 
@@ -35,7 +39,21 @@ export const Header = () => {
 
         <section>
           <img src="/iconos/person.png" alt="icono experiencias"></img>
-          <button>Iniciar sesión</button>
+          {user ? (
+            <NavLink to="/card">
+              <button>Nombre</button>
+            </NavLink>
+          ) : (
+            <NavLink to="/card">
+              <button>Iniciar sesión</button>
+            </NavLink>
+          )}
+
+          {user && (
+            <button onClick={() => logout()}>
+              <img src="/iconos/cerrar-sesion.png"></img>
+            </button>
+          )}
         </section>
       </nav>
     </header>
