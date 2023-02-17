@@ -97,3 +97,94 @@ main {
   border: none !important;
   width: 9rem;
 }
+
+/* ------------ CONÓCENOS ------------ */
+
+#section-p-about {
+  color: aliceblue;
+  display: flex;
+  height: 75vh;
+  width: 100%;
+  background: rgba(75, 68, 68, 0.514);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.article-about {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.article-about > img {
+  border: 1px solid black;
+  margin: 0 2rem 0 2rem;
+  width: 16rem;
+  height: 17rem;
+}
+
+#section-h-about {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60rem;
+  font-size: 16px;
+}
+
+#section-quienes-somos {
+  display: flex;
+  height: 20rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+#textos {
+  display: flex;
+}
+
+.article-textos {
+  padding: 2rem;
+  gap: 0.3rem;
+  text-align: center;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.363);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+
+.p-article {
+  width: 17rem;
+}
+
+.h1-about {
+  color: aliceblue;
+  font-size: 3rem;
+}
+
+/* ------------ DETALLE ------------ */
+
+#section-detalle-p {
+  height: 74.9vh;
+  width: 100%;
+}
+
+#section-detalle-h {
+  border: 1px solid black;
+  background-color: aliceblue;
+  width: 70rem;
+  height: 80%;
+  gap: 0;
+}
+
+.detalle-datos-descripcion {
+  border: 1px solid black;
+  width: 50%;
+  height: 100%;
+}

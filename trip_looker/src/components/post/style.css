@@ -1,32 +1,39 @@
-article {
+.li-post {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 16rem;
   height: 25rem;
-  background-color: rgb(255, 255, 255);
-  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.699);
+  font-weight: 400;
   overflow: hidden;
 }
 
 .img-post {
+  box-shadow: rgba(6, 166, 240, 0.25) 0px 54px 55px,
+    rgba(19, 118, 211, 0.12) 0px -12px 30px, rgba(202, 24, 24, 0.12) 0px 4px 6px,
+    rgba(235, 10, 10, 0.17) 0px 12px 13px, rgba(219, 11, 11, 0.09) 0px -3px 5px;
   width: 85%;
   height: 10rem;
   margin: 1rem;
 }
 
-li li:nth-child(2) {
+p:nth-child(2) {
   margin-top: -0.5rem;
   margin-bottom: 0.5rem;
   text-align: center;
 }
 
-li:nth-child(3),
-li:nth-child(4),
-li:nth-child(5) {
+p:nth-child(3),
+p:nth-child(4),
+p:nth-child(5) {
   margin-left: 0.7rem;
   margin-right: 0.7rem;
 }
 
-li:nth-child(5) {
+p:nth-child(5) {
   width: 14rem;
   height: 3rem;
   margin-top: 0.5rem;
@@ -40,6 +47,10 @@ li:nth-child(5) {
   justify-content: space-between;
   align-items: center;
   padding: 8px 16px;
+  background-color: rgba(199, 29, 29, 0.123);
+  box-shadow: rgba(6, 166, 240, 0.25) 0px 54px 55px,
+    rgba(19, 118, 211, 0.12) 0px -12px 30px, rgba(202, 24, 24, 0.12) 0px 4px 6px,
+    rgba(235, 10, 10, 0.17) 0px 12px 13px, rgba(219, 11, 11, 0.09) 0px -3px 5px;
 }
 
 #detalle {

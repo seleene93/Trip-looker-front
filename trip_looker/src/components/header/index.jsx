@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./style.css";
 
 export const Header = () => {
   const { user, logout } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header>
@@ -15,13 +16,17 @@ export const Header = () => {
       </NavLink>
 
       <nav>
-        <section>
-          <img
-            src="/iconos/publicidad-removebg-preview.png"
-            alt="icono experiencias"
-          ></img>
-          <button>Publicar</button>
-        </section>
+        {user && (
+          <section>
+            <img
+              src="/iconos/publicidad-removebg-preview.png"
+              alt="icono experiencias"
+            ></img>
+            <NavLink to="/nuevo-post">
+              <button>Publicar</button>
+            </NavLink>
+          </section>
+        )}
 
         <section>
           <img src="/iconos/open-passport.png" alt="icono experiencias"></img>
@@ -37,21 +42,34 @@ export const Header = () => {
           </NavLink>
         </section>
 
-        <section>
+        <section className="menu">
           <img src="/iconos/person.png" alt="icono experiencias"></img>
           {user ? (
-            <NavLink to="/card">
-              <button>Nombre</button>
-            </NavLink>
+            <button id="nombre" onClick={() => setIsOpen(!isOpen)}>
+              {user.nombre}
+            </button>
           ) : (
             <NavLink to="/card">
               <button>Iniciar sesión</button>
             </NavLink>
           )}
 
-          {user && (
-            <button onClick={() => logout()}>
-              <img src="/iconos/cerrar-sesion.png"></img>
+          {user && isOpen && (
+            <section id="menu">
+              <menu className="dropdown">
+                <NavLink to="/editar-perfil">
+                  <button className="botones-dropdown">Editar perfil</button>
+                </NavLink>
+                <NavLink to="/mis-experiencias">
+                  <button className="botones-dropdown">Mis experiencias</button>
+                </NavLink>
+              </menu>
+            </section>
+          )}
+
+          {user && isOpen && (
+            <button className="botones-dropdown" onClick={() => logout()}>
+              Salir
             </button>
           )}
         </section>

@@ -9,6 +9,7 @@ import { Register } from "./components/views/register";
 import { Experiencias } from "./components/views/experiencias";
 import { NotFound } from "./components/notFound";
 import { About } from "./components/views/conocenos";
+import { Detalle } from "./components/views/detalle";
 
 import "./App.css";
 
@@ -19,9 +20,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/card" element={<IniciarSesion />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/registro" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/experiencias" element={<Experiencias />} />
+        <Route path="/post/:id" element={<Detalle />} />
         <Route path="/conocenos" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

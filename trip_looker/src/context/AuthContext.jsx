@@ -15,7 +15,6 @@ export const AuthContextProviderComponent = ({ children }) => {
     const getUserData = async () => {
       try {
         const data = await getMyDataService(token); // obtenemos ela info del usuario al que llamamos data para ahora setearlo en user
-        console.log(data);
 
         setUser(data); // user dejará de ser null
       } catch (error) {
@@ -38,10 +37,10 @@ export const AuthContextProviderComponent = ({ children }) => {
     // setea el token
     setToken(token);
   };
-
+  // volvemos children envuelto en el contexto
   return (
     <AuthContext.Provider value={{ token, user, login, logout }}>
-      {children} // volvemos children envuelto en el contexto
+      {children}
     </AuthContext.Provider>
   );
 };
