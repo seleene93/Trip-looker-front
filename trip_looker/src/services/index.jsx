@@ -13,6 +13,31 @@ export const getAllPostsService = async () => {
   return json.data;
 };
 
+export const getFilterPostsService = async (filter) => {
+  const response = await fetch(`${urlBackend}/posts?categoria=${filter}`);
+
+  // para obtener los tweets filtrados y lo hacemos con un fetch a nuestra url backend
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message); // Ya no se ejecutaría la petición
+  }
+  return json.data;
+};
+
+export const getSinglePostService = async (id) => {
+  const response = await fetch(`${urlBackend}/posts/${id}`); // obtenemos el tweet por el id del tweet
+  const json = await response.json();
+
+  if (!response.ok) {
+    // la respuesta será ok cuando sea menor de 300
+    throw new Error(json.message); // usamos el error que creamos en backend
+  }
+
+  return json.data;
+};
+
 export const logInUserService = async ({ email, password }) => {
   // para loggearnos y obtener el token
   const response = await fetch(`${urlBackend}/usuarios/login`, {
