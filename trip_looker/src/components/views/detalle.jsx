@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom";
 import usePost from "../../hooks/usePost";
 import { ErrorMessage } from "../errorMessage";
 import { Loading } from "../Loading";
+import { PostImage } from "../postImage";
 
 export const Detalle = () => {
   const { id } = useParams(); // parametros de la ruta y destructuramos el id
   const { post, error, loading } = usePost(id);
-  console.log(post);
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
@@ -14,8 +14,8 @@ export const Detalle = () => {
   return (
     <section id="section-detalle-p">
       <section id="section-detalle-h">
-        <section id="detalle-datos" className="detalle-datos-descripcion">
-          <ul>
+        <section className="detalle-datos-descripcion">
+          <ul id="detalle-datos">
             <li>
               <p>{post[0].titulo}</p>
             </li>
@@ -24,15 +24,13 @@ export const Detalle = () => {
             </li>
             <li>Categoría: {post[0].categoria}</li>
             <li>{post[0].entradilla}</li>
-            <li>
-              <img
-                src={`http://localhost:8080/${post[0].images[0].nombre}`}
-              ></img>
+            <li id="img-flechas">
+              <PostImage post={post} />
             </li>
           </ul>
         </section>
-        <section id="detalle-descripcion" className="detalle-datos-descripcion">
-          {post[0].texto}
+        <section className="detalle-datos-descripcion">
+          <section id="detalle-descripcion">{post[0].texto}</section>
         </section>
       </section>
     </section>

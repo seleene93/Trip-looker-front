@@ -44,7 +44,7 @@ button:hover {
 }
 
 .menu {
-  margin-top: 9rem;
+  height: 1rem;
   display: block;
   z-index: 1;
 }

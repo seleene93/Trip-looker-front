@@ -73,3 +73,19 @@ export const getMyDataService = async (token) => {
 
   return json.data;
 };
+
+export const getUserPostsService = async (id, token) => {
+  // obtiene los tweets subidos por el usuario que indiquemos mediante el id
+  const response = await fetch(`${urlBackend}/usuarios/${id}/posts`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
