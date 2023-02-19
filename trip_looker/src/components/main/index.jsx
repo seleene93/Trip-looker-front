@@ -6,7 +6,7 @@ export const Main = () => {
       <section className="form">
         <form>
           <input type="text" name="experiencias" placeholder="Lugar" />
-          <button className="lupa">
+          <button id="lupa">
             <img src="/iconos/lupa.png"></img>
           </button>
         </form>

@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export const Post = ({ post }) => {
   const { user } = useContext(AuthContext);
+
   return (
     <li className="li-post">
       <figure>
@@ -23,7 +24,7 @@ export const Post = ({ post }) => {
       <p>{post.entradilla}</p>
 
       <section className="botones">
-        {user ? (
+        {user && user.id !== post.id_usuario ? (
           <>
             <button>
               <img src="/iconos/me-gusta.png"></img>

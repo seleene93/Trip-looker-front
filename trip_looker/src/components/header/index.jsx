@@ -50,7 +50,7 @@ export const Header = () => {
             </button>
           ) : (
             <NavLink to="/card">
-              <button>Iniciar sesión</button>
+              <button id="iniciar-sesion">Iniciar sesión</button>
             </NavLink>
           )}
 
@@ -60,7 +60,7 @@ export const Header = () => {
                 <NavLink to="/editar-perfil">
                   <button className="botones-dropdown">Editar perfil</button>
                 </NavLink>
-                <NavLink to="/mis-experiencias">
+                <NavLink to={`/mis-experiencias/${user.id}`}>
                   <button className="botones-dropdown">Mis experiencias</button>
                 </NavLink>
               </menu>

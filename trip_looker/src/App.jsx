@@ -12,6 +12,7 @@ import { About } from "./components/views/conocenos";
 import { Detalle } from "./components/views/detalle";
 
 import "./App.css";
+import { ExperienciasUsuario } from "./components/views/experienciasUsuario";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/experiencias" element={<Experiencias />} />
         <Route path="/post/:id" element={<Detalle />} />
+        <Route path="/mis-experiencias/:id" element={<ExperienciasUsuario />} />
         <Route path="/conocenos" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
