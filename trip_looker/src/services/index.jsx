@@ -3,7 +3,7 @@ const urlBackend = import.meta.env.VITE_BACKEND_URL;
 export const getAllPostsService = async () => {
   const response = await fetch(`${urlBackend}/posts`);
 
-  // para obtener todos los tweets y lo hacemos con un fetch a nuestra url backend
+  // para obtener todos los posts y lo hacemos con un fetch a nuestra url backend
 
   const json = await response.json();
 
@@ -16,7 +16,7 @@ export const getAllPostsService = async () => {
 export const getFilterPostsService = async (filter) => {
   const response = await fetch(`${urlBackend}/posts?categoria=${filter}`);
 
-  // para obtener los tweets filtrados y lo hacemos con un fetch a nuestra url backend
+  // para obtener los posts filtrados y lo hacemos con un fetch a nuestra url backend
 
   const json = await response.json();
 
@@ -27,7 +27,7 @@ export const getFilterPostsService = async (filter) => {
 };
 
 export const getSinglePostService = async (id) => {
-  const response = await fetch(`${urlBackend}/posts/${id}`); // obtenemos el tweet por el id del tweet
+  const response = await fetch(`${urlBackend}/posts/${id}`); // obtenemos el post por el id del post
   const json = await response.json();
 
   if (!response.ok) {
@@ -75,7 +75,7 @@ export const getMyDataService = async (token) => {
 };
 
 export const getUserPostsService = async (id, token) => {
-  // obtiene los tweets subidos por el usuario que indiquemos mediante el id
+  // obtiene los posts subidos por el usuario que indiquemos mediante el id
   const response = await fetch(`${urlBackend}/usuarios/${id}/posts`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -87,5 +87,60 @@ export const getUserPostsService = async (id, token) => {
   if (!response.ok) {
     throw new Error(json.message);
   }
+  return json.data;
+};
+
+export const registerUserService = async ({ data }) => {
+  // post a la BBDD con un nuevo usuario
+  const response = await fetch(`${urlBackend}/usuarios`, {
+    method: "POST",
+    body: data,
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+};
+
+export const sendPostService = async ({ data, token }) => {
+  // postear la experiencia a la BBDD
+  const response = await fetch(`${urlBackend}/posts`, {
+    method: "POST",
+    body: data,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};
+
+export const votePostService = async ({ token, id, voto }) => {
+  // postear voto a la BBDD
+  const response = await fetch(`${urlBackend}/posts/${id}/votar`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      voto,
+    }),
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
   return json.data;
 };

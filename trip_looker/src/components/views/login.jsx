@@ -32,7 +32,7 @@ export const Login = () => {
           src="/logo/Ilustracion_sin_titulo_2.png"
           alt="logo"
         ></img>
-        <p>Entra para compartir tus experiencias</p>
+        <p id="texto1">Entra para compartir tus experiencias</p>
         <form onSubmit={handleForm} className="form-card">
           <input
             type="email"

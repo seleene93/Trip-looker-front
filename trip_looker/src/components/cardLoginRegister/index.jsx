@@ -9,7 +9,7 @@ export const Card = () => {
         <button className="iniciar-sesion">Iniciar sesión</button>
       </NavLink>
       <p>¿No eres miembro?</p>
-      <NavLink to="/register" className="navlink">
+      <NavLink to="/registro" className="navlink">
         <button className="iniciar-sesion">¡Únete!</button>
       </NavLink>
     </article>

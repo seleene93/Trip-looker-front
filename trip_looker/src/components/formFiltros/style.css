@@ -1,14 +1,24 @@
 select {
   width: 20rem;
-  height: 2rem;
   padding: 0.5rem;
   background: rgba(240, 248, 255, 0.253);
   border: 1px solid #000000;
   border-radius: 8px;
-  margin-top: 0.25rem;
   font-size: 10px;
 }
 
 #filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 3rem;
+}
+
+#lupa {
+  width: 2rem;
+  height: 2rem;
+}
+
+input#lugar {
+  font-size: 10px;
 }

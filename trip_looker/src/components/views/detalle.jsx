@@ -17,19 +17,30 @@ export const Detalle = () => {
         <section className="detalle-datos-descripcion">
           <ul id="detalle-datos">
             <li>
-              <p>{post[0].titulo}</p>
+              <p id="titulo">{post[0].titulo}</p>
             </li>
-            <li>
-              <p>Lugar: {post[0].lugar}</p>
+            <li id="entradilla">{post[0].entradilla}</li>
+            <li className="p-lugar-categoria">
+              <p>
+                <b>Lugar:</b> {post[0].lugar}
+              </p>
             </li>
-            <li>Categoría: {post[0].categoria}</li>
-            <li>{post[0].entradilla}</li>
+            <li className="p-lugar-categoria">
+              <p>
+                <b>Categoría:</b> {post[0].categoria}
+              </p>
+            </li>
             <li id="img-flechas">
               <PostImage post={post} />
             </li>
           </ul>
         </section>
-        <section className="detalle-datos-descripcion">
+        <section
+          className="detalle-datos-descripcion"
+          style={{
+            "box-shadow": "20px 0 20px -20px  rgba(0, 0, 0, 0.732) inset",
+          }}
+        >
           <section id="detalle-descripcion">{post[0].texto}</section>
         </section>
       </section>

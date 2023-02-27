@@ -5,4 +5,5 @@ ul.post-list {
   justify-content: space-around;
   gap: 2rem;
   list-style: none;
+  margin-bottom: 3rem;
 }

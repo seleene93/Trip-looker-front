@@ -19,8 +19,9 @@ section {
   gap: 1rem;
 }
 
-.logo {
-  width: 1rem;
+img#logo {
+  width: 9rem;
+  height: 9rem;
 }
 
 .logo > img {
@@ -47,6 +48,7 @@ button:hover {
   height: 1rem;
   display: block;
   z-index: 1;
+  margin-bottom: 3rem;
 }
 
 .menu-dropdown {

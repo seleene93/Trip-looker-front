@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 16rem;
-  height: 24rem;
+  height: 26rem;
   background-color: rgba(255, 255, 255, 0.699);
   font-weight: 400;
   overflow: hidden;
@@ -14,9 +14,10 @@
   box-shadow: rgba(6, 166, 240, 0.25) 0px 54px 55px,
     rgba(19, 118, 211, 0.12) 0px -12px 30px, rgba(202, 24, 24, 0.12) 0px 4px 6px,
     rgba(235, 10, 10, 0.17) 0px 12px 13px, rgba(219, 11, 11, 0.09) 0px -3px 5px;
-  width: 85%;
-  height: 10rem;
-  margin: 1rem;
+  width: 15rem;
+  height: 11rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 p:nth-child(2) {
@@ -47,7 +48,7 @@ p:nth-child(5) {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 16px;
+  padding: 0.5rem;
   background-color: rgba(199, 29, 29, 0.123);
   box-shadow: rgba(6, 166, 240, 0.25) 0px 54px 55px,
     rgba(19, 118, 211, 0.12) 0px -12px 30px, rgba(202, 24, 24, 0.12) 0px 4px 6px,
@@ -61,4 +62,21 @@ p:nth-child(5) {
 .botones button img {
   width: 2rem;
   height: 2rem;
+}
+
+p.numero-likes {
+  margin-right: 1rem !important;
+  width: 0.5rem;
+  height: 0.9rem;
+  font-size: 12px;
+  color: blue;
+}
+
+#dislike {
+  margin-bottom: 1rem;
+  color: red;
+}
+
+button:disabled {
+  cursor: default;
 }

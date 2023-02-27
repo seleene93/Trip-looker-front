@@ -16,7 +16,7 @@ export const usePosts = (id) => {
           ? await getUserPostsService(id, token)
           : await getAllPostsService();
 
-        setPosts(data); // ahora tweets tendra como valor data que son los datos que obtenemos de la BBDD
+        setPosts(data); // ahora posts tendra como valor data que son los datos que obtenemos de la BBDD
       } catch (error) {
         setError(error.message);
       } finally {
@@ -26,5 +26,11 @@ export const usePosts = (id) => {
 
     loadPosts();
   }, [id]);
-  return { posts, error, loading };
+
+  const addPost = (data) => {
+    // funcion para añadir los posts
+    setPosts([data, ...posts]);
+  };
+
+  return { posts, error, loading, addPost };
 };
