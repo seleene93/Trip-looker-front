@@ -10,9 +10,11 @@ export const Header = () => {
   return (
     <header>
       <NavLink to="/">
-        <div className="logo">
-          <img src="/logo/Ilustracion_sin_titulo_2.png" alt="logo"></img>
-        </div>
+        <img
+          src="/logo/Ilustracion_sin_titulo_2.png"
+          alt="logo"
+          id="logo"
+        ></img>
       </NavLink>
 
       <nav>
@@ -43,14 +45,18 @@ export const Header = () => {
         </section>
 
         <section className="menu">
-          <img src="/iconos/person.png" alt="icono experiencias"></img>
+          <img
+            src="/iconos/person.png"
+            alt="icono experiencias"
+            id="icono-iniciar-sesion"
+          ></img>
           {user ? (
             <button id="nombre" onClick={() => setIsOpen(!isOpen)}>
               {user.nombre}
             </button>
           ) : (
             <NavLink to="/card">
-              <button id="iniciar-sesion">Iniciar sesión</button>
+              <button>Iniciar sesión</button>
             </NavLink>
           )}
 
@@ -68,9 +74,11 @@ export const Header = () => {
           )}
 
           {user && isOpen && (
-            <button className="botones-dropdown" onClick={() => logout()}>
-              Salir
-            </button>
+            <NavLink to="/">
+              <button className="botones-dropdown" onClick={() => logout()}>
+                Salir
+              </button>
+            </NavLink>
           )}
         </section>
       </nav>

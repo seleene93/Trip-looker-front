@@ -1,41 +1,21 @@
-body {
-  background-image: url("/public/img/playa.jpg");
+#textos {
+  gap: 10rem;
 }
 
-.form {
-  margin: 10rem;
-}
-
-form {
-  display: flex;
+.article-textos {
+  padding: 2rem;
   gap: 1rem;
+  text-align: center;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.363);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
 }
 
-input {
-  width: 20rem;
-  height: 2rem;
-  padding: 0.5rem;
-  background: rgba(240, 248, 255, 0.253);
-  border: 1px solid #000000;
-  border-radius: 8px;
-  margin-top: 0.25rem;
-}
-
-#lupa img {
-  width: 2rem;
-  height: 2rem;
-  margin-top: -8rem;
-}
-
-::placeholder {
-  color: rgba(0, 0, 0, 0.582);
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-input:focus {
-  background: none;
-  outline: none;
+.p-article {
+  width: 17rem;
 }

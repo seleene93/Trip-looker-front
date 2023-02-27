@@ -1,6 +1,7 @@
 import "./style.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { BotonesLikeDislike } from "../botonesLikeDislike";
 import { NavLink } from "react-router-dom";
 
 export const Post = ({ post }) => {
@@ -26,20 +27,24 @@ export const Post = ({ post }) => {
       <section className="botones">
         {user && user.id !== post.id_usuario ? (
           <>
-            <button>
-              <img src="/iconos/me-gusta.png"></img>
+            <BotonesLikeDislike post={post} />
+          </>
+        ) : (
+          <>
+            <p className="numero-likes">{post.votos[0].voto_positivo}</p>
+            <button disabled>
+              <img src="/iconos/me-gusta.svg"></img>
             </button>
             <NavLink to={`/post/${post.id}`}>
               <button id="detalle">Ver</button>
             </NavLink>
-            <button>
-              <img src="/iconos/dislike.png"></img>
+            <button disabled>
+              <img src="/iconos/dislike.svg"></img>
             </button>
+            <p className="numero-likes" id="dislike">
+              {post.votos[0].voto_negativo}
+            </p>
           </>
-        ) : (
-          <NavLink to={`/post/${post.id}`}>
-            <button id="detalle">Ver</button>
-          </NavLink>
         )}
       </section>
     </li>

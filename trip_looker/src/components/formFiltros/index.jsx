@@ -1,34 +1,27 @@
 import "./style.css";
-import { useState } from "react";
-import Select from "react-select";
-
-const categoria = [
-  { label: "Ocio", value: "ocio" },
-  { label: "Cultural", value: "cultural" },
-  { label: "Expedición", value: "expedición" },
-  { label: "Romántico", value: "romantico" },
-  { label: "Otro", value: "otro" },
-];
 
 export const FormFiltros = () => {
-  const [selectedCategory, setSelectedCategory] = useState();
-
-  const handleSelectChange = ({ value }) => {
-    setSelectedCategory(value);
-  };
   return (
     <form id="filtros">
-      <Select
-        defaultValue={{ label: "Todos", value: "todos" }}
-        options={categoria}
-        onChange={handleSelectChange}
-      />
+      <input type="text" id="lugar" name="lugar" placeholder="Lugar" />
+
+      <select name="categoria">
+        <option>Categoría</option>
+        <option value="ocio">Ocio</option>
+        <option value="cultural">Culturales</option>
+        <option value="expedicion">Expediciones</option>
+        <option value="romatico">Románticos</option>
+        <option value="otro">Otros</option>
+      </select>
 
       <select name="orden-valoraciones">
-        <option value="valor1">Orden valoraciones</option>
-        <option value="valor1">Ascendente</option>
-        <option value="valor2">Descendente</option>
+        <option>Orden valoraciones</option>
+        <option value="ascendente">Ascendente</option>
+        <option value="descendente">Descendente</option>
       </select>
+      <button>
+        <img id="lupa" src="/iconos/lupa.png"></img>
+      </button>
     </form>
   );
 };

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getSinglePostService } from "../services";
 
 const usePost = (id) => {
-  // hook que se encarga de obtener el tweet por id de la BBDD
+  // hook que se encarga de obtener el post por id de la BBDD
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
