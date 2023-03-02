@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { BotonesLikeDislike } from "../botonesLikeDislike";
 import { NavLink } from "react-router-dom";
 
-export const Post = ({ post }) => {
+export const Post = ({ post, posts, setPosts }) => {
   const { user } = useContext(AuthContext);
 
   return (
@@ -19,19 +19,25 @@ export const Post = ({ post }) => {
           }
         />
       </figure>
-      <p>{post.titulo}</p>
-      <p>Categoria: {post.categoria}</p>
-      <p>Lugar: {post.lugar}</p>
+      <p>
+        <b>{post.titulo}</b>
+      </p>
+      <p>
+        <b>Categoria:</b> {post.categoria}
+      </p>
+      <p>
+        <b>Lugar:</b> {post.lugar}
+      </p>
       <p>{post.entradilla}</p>
 
       <section className="botones">
         {user && user.id !== post.id_usuario ? (
           <>
-            <BotonesLikeDislike post={post} />
+            <BotonesLikeDislike post={post} posts={posts} setPosts={setPosts} />
           </>
         ) : (
           <>
-            <p className="numero-likes">{post.votos[0].voto_positivo}</p>
+            <p className="numero-likes">{post.votos.positivo}</p>
             <button disabled>
               <img src="/iconos/me-gusta.svg"></img>
             </button>
@@ -42,7 +48,7 @@ export const Post = ({ post }) => {
               <img src="/iconos/dislike.svg"></img>
             </button>
             <p className="numero-likes" id="dislike">
-              {post.votos[0].voto_negativo}
+              {post.votos.negativo}
             </p>
           </>
         )}

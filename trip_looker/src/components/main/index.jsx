@@ -17,7 +17,7 @@ export const Main = () => {
 
         <article className="article-textos">
           <img src="/iconos/3069197.png"></img>
-          <h3>¿Cómo formar parte de la comunidad?</h3>
+          <h3>¿Cómo formar parte?</h3>
           <p className="p-article">
             Regístrate con tus datos y podrás compartir tus publicaciones. Votar
             y comentar en las recomendaciones de otros viajeros y así contribuir

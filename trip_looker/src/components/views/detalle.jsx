@@ -17,17 +17,17 @@ export const Detalle = () => {
         <section className="detalle-datos-descripcion">
           <ul id="detalle-datos">
             <li>
-              <p id="titulo">{post[0].titulo}</p>
+              <p id="titulo">{post.titulo}</p>
             </li>
-            <li id="entradilla">{post[0].entradilla}</li>
+            <li id="entradilla">{post.entradilla}</li>
             <li className="p-lugar-categoria">
               <p>
-                <b>Lugar:</b> {post[0].lugar}
+                <b>Lugar:</b> {post.lugar}
               </p>
             </li>
             <li className="p-lugar-categoria">
               <p>
-                <b>Categoría:</b> {post[0].categoria}
+                <b>Categoría:</b> {post.categoria}
               </p>
             </li>
             <li id="img-flechas">
@@ -38,10 +38,10 @@ export const Detalle = () => {
         <section
           className="detalle-datos-descripcion"
           style={{
-            "box-shadow": "20px 0 20px -20px  rgba(0, 0, 0, 0.732) inset",
+            boxShadow: "20px 0 20px -20px  rgba(0, 0, 0, 0.732) inset",
           }}
         >
-          <section id="detalle-descripcion">{post[0].texto}</section>
+          <section id="detalle-descripcion">{post.texto}</section>
         </section>
       </section>
     </section>

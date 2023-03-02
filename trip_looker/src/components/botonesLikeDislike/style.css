@@ -1,0 +1,9 @@
+.voto-positivo,
+.voto-negativo {
+  fill: white;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+}

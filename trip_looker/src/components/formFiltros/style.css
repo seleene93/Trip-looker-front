@@ -7,6 +7,10 @@ select {
   font-size: 10px;
 }
 
+select:focus {
+  outline: none;
+}
+
 #filtros {
   display: flex;
   justify-content: center;
@@ -21,4 +25,8 @@ select {
 
 input#lugar {
   font-size: 10px;
+}
+
+input#lugar:focus {
+  outline: none;
 }

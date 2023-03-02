@@ -2,12 +2,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 16rem;
   height: 26rem;
   background-color: rgba(255, 255, 255, 0.699);
   font-weight: 400;
   overflow: hidden;
+}
+
+figure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-post {
@@ -27,13 +33,14 @@ p:nth-child(2) {
 }
 
 p:nth-child(3),
-p:nth-child(4),
-p:nth-child(5) {
-  margin-left: 0.7rem;
-  margin-right: 0.7rem;
+p:nth-child(4) {
+  text-align: left;
+  margin-left: 1rem;
 }
 
 p:nth-child(5) {
+  margin-left: 1rem;
+  margin-right: 1rem;
   width: 14rem;
   height: 3rem;
   margin-top: 0.5rem;
@@ -79,4 +86,8 @@ p.numero-likes {
 
 button:disabled {
   cursor: default;
+}
+
+.filtros {
+  font-weight: bold;
 }
