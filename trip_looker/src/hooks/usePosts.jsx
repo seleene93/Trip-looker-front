@@ -14,7 +14,7 @@ export const usePosts = (id) => {
         setLoading(true); // como es normal al hacer la petición saldrá que está cargando los tweets
         const data = id
           ? await getUserPostsService(id, token)
-          : await getAllPostsService();
+          : await getAllPostsService(token);
 
         setPosts(data); // ahora posts tendra como valor data que son los datos que obtenemos de la BBDD
       } catch (error) {
@@ -32,5 +32,5 @@ export const usePosts = (id) => {
     setPosts([data, ...posts]);
   };
 
-  return { posts, error, loading, addPost };
+  return { posts, setPosts, error, loading, addPost };
 };

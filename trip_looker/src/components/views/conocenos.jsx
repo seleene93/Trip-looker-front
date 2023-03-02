@@ -30,9 +30,10 @@ export const About = () => {
         <img src="/img/z5ybnr.jpg"></img>
         <h2>Rebeca García</h2>
         <p>
-          Me gusta viajar y enriquecerme con todo tipo de culturas, me entra
-          mucha curiosidad la forma que tiene la gente de vivir, según las
-          costumbres y rutinas dependiendo del país o zona donde habiten.
+          Desarrolladora web, apasionada de la tecnología y aventurera. En los
+          últimos años he vivido en Asia, América y Europa compaginando mi vida
+          como nómada digital, conociendo lugares nuevos y conviviendo con otras
+          culturas.
         </p>
       </article>
     </section>

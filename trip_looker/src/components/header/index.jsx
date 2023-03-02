@@ -33,7 +33,7 @@ export const Header = () => {
         <section>
           <img src="/iconos/open-passport.png" alt="icono experiencias"></img>
           <NavLink to="/experiencias">
-            <button>Experiencias</button>
+            <button>Posts</button>
           </NavLink>
         </section>
 

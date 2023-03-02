@@ -64,3 +64,20 @@ button:hover {
 .nav-link:visited {
   color: white;
 }
+
+@media (max-width: 900px) {
+  nav {
+    gap: 0;
+    justify-content: center;
+  }
+  nav section {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+}

@@ -32,7 +32,6 @@ export const Registro = () => {
 
       navigate("/"); // 2 No podemos usar link porq los ocmponentes solo pueden ir en jsx, aqui utilizamos el hook navigate
     } catch (error) {
-      console.log(avatar);
       setError(error.message);
     }
   };
