@@ -30,3 +30,9 @@ input#lugar {
 input#lugar:focus {
   outline: none;
 }
+
+@media (max-width: 1040px) {
+  #filtros {
+    flex-direction: column;
+  }
+}

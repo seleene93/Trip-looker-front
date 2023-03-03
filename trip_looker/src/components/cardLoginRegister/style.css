@@ -31,3 +31,9 @@ article p {
 .navlink {
   text-decoration: none;
 }
+
+@media (max-width: 425px) {
+  .card {
+    min-width: 22rem;
+  }
+}

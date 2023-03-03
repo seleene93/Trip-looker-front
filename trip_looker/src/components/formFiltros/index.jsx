@@ -1,15 +1,11 @@
 import "./style.css";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import {
-  getAllPostsService,
-  getFilterPostsService,
-  getPostsByVotesService,
-} from "../../services";
+import { getFilterPostsService } from "../../services";
 
 export const FormFiltros = ({ setPosts }) => {
   const [categoria, setCategoria] = useState();
-  const [orden, setOrden] = useState();
+  const [direccion, setDireccion] = useState();
   const [lugar, setLugar] = useState();
   const { token } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
@@ -20,45 +16,13 @@ export const FormFiltros = ({ setPosts }) => {
 
     try {
       setLoading(true);
-      // Creamos condiciones para manejar si enviamos o no categoria y lugar para obtener los posts.
-      let posts;
 
-      if (categoria && lugar) {
-        posts = await getFilterPostsService({ token, categoria, lugar });
-      } else if (categoria) {
-        posts = await getFilterPostsService({ token, categoria });
-      } else if (lugar) {
-        posts = await getFilterPostsService({ token, lugar });
-      } else {
-        posts = await getAllPostsService(token);
-      }
-
-      // Creamos condiciones para manejar si enviamos o no categoria y lugar y orden de votos para obtener los posts.
-      if (categoria && lugar && orden) {
-        posts = await getPostsByVotesService({
-          token,
-          categoria,
-          lugar,
-          orden,
-        });
-      } else if (lugar && orden) {
-        posts = await getPostsByVotesService({
-          token,
-          lugar,
-          orden,
-        });
-      } else if (orden && categoria) {
-        posts = await getPostsByVotesService({
-          token,
-          categoria,
-          orden,
-        });
-      } else {
-        posts = await getPostsByVotesService({
-          token,
-          orden,
-        });
-      }
+      const posts = await getFilterPostsService({
+        token,
+        categoria,
+        lugar,
+        direccion,
+      });
 
       setPosts(posts);
       setError(null);
@@ -76,16 +40,10 @@ export const FormFiltros = ({ setPosts }) => {
         id="lugar"
         name="lugar"
         placeholder="Lugar"
-        onChange={(e) => {
-          e.target.value !== undefined && setLugar(e.target.value);
-        }}
+        onChange={(e) => setLugar(e.target.value)}
       />
 
-      <select
-        onChange={(e) => {
-          e.target.value !== undefined && setCategoria(e.target.value);
-        }}
-      >
+      <select onChange={(e) => setCategoria(e.target.value)}>
         <option value="">Categoría</option>
         <option value="ocio">Ocio</option>
         <option value="cultural">Culturales</option>
@@ -94,14 +52,10 @@ export const FormFiltros = ({ setPosts }) => {
         <option value="otro">Otros</option>
       </select>
 
-      <select
-        onChange={(e) => {
-          e.target.value !== undefined && setOrden(e.target.value);
-        }}
-      >
+      <select onChange={(e) => setDireccion(e.target.value)}>
         <option value="">Orden valoraciones</option>
-        <option value="asc">Ascendente</option>
-        <option value="desc">Descendente</option>
+        <option value="ASC">Ascendente</option>
+        <option value="DESC">Descendente</option>
       </select>
       <button type="submit">
         <img id="lupa" src="/iconos/lupa.png"></img>

@@ -23,7 +23,7 @@ export const ExperienciasUsuario = () => {
           ></img>
         </figure>
         <ul>
-          <li>
+          <li id="nombre-apellidos">
             {user.nombre} {user.apellidos}
           </li>
           <li id="li-email">{user.email}</li>

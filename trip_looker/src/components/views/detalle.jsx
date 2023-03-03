@@ -13,7 +13,7 @@ export const Detalle = () => {
 
   return (
     <section id="section-detalle-p">
-      <section id="section-detalle-h">
+      <section className="section-detalle-h" id="detalle">
         <section className="detalle-datos-descripcion">
           <ul id="detalle-datos">
             <li>
@@ -35,12 +35,9 @@ export const Detalle = () => {
             </li>
           </ul>
         </section>
-        <section
-          className="detalle-datos-descripcion"
-          style={{
-            boxShadow: "20px 0 20px -20px  rgba(0, 0, 0, 0.732) inset",
-          }}
-        >
+      </section>
+      <section className="section-detalle-h" id="detalle-texto">
+        <section className="detalle-datos-descripcion">
           <section id="detalle-descripcion">{post.texto}</section>
         </section>
       </section>
