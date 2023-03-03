@@ -116,7 +116,7 @@ export const BotonesLikeDislike = ({ post, posts, setPosts }) => {
       </button>
 
       <NavLink to={`/post/${post.id}`}>
-        <button id="detalle">Ver</button>
+        <button>Ver</button>
       </NavLink>
       <button onClick={handleNegativeVote}>
         <svg

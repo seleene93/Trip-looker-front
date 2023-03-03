@@ -47,7 +47,7 @@ export const Header = () => {
         <section className="menu">
           <img
             src="/iconos/person.png"
-            alt="icono experiencias"
+            alt="icono usuario"
             id="icono-iniciar-sesion"
           ></img>
           {user ? (
@@ -61,7 +61,7 @@ export const Header = () => {
           )}
 
           {user && isOpen && (
-            <section id="menu">
+            <section id="dropdown">
               <menu className="dropdown">
                 <NavLink to="/editar-perfil">
                   <button className="botones-dropdown">Editar perfil</button>
@@ -69,16 +69,17 @@ export const Header = () => {
                 <NavLink to={`/mis-experiencias/${user.id}`}>
                   <button className="botones-dropdown">Mis experiencias</button>
                 </NavLink>
+                <NavLink to="/">
+                  <button
+                    id="logout"
+                    className="botones-dropdown"
+                    onClick={() => logout()}
+                  >
+                    Salir
+                  </button>
+                </NavLink>
               </menu>
             </section>
-          )}
-
-          {user && isOpen && (
-            <NavLink to="/">
-              <button className="botones-dropdown" onClick={() => logout()}>
-                Salir
-              </button>
-            </NavLink>
           )}
         </section>
       </nav>

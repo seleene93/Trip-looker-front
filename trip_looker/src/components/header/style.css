@@ -48,7 +48,6 @@ button:hover {
   height: 1rem;
   display: block;
   z-index: 1;
-  margin-bottom: 3rem;
 }
 
 .menu-dropdown {
@@ -70,14 +69,14 @@ button:hover {
     gap: 0;
     justify-content: center;
   }
+
   nav section {
     gap: 0;
     flex-direction: column;
   }
 
   .menu {
+    height: 7rem;
     display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
   }
 }

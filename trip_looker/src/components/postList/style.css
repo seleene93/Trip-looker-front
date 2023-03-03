@@ -1,8 +1,7 @@
 ul.post-list {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 2rem;
   list-style: none;
   margin-bottom: 3rem;

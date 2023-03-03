@@ -17,23 +17,22 @@ export const getAllPostsService = async (token) => {
   return json.data;
 };
 
-export const getFilterPostsService = async ({ token, categoria, lugar }) => {
-  let url = `${urlBackend}/posts`;
-
-  if (categoria && lugar) {
-    url += `?categoria=${categoria}&lugar=${lugar}`;
-  } else if (categoria) {
-    url += `?categoria=${categoria}`;
-  } else if (lugar) {
-    url += `?lugar=${lugar}`;
-  }
-
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+export const getFilterPostsService = async ({
+  token,
+  categoria,
+  lugar,
+  direccion,
+}) => {
   // para obtener los posts filtrados y lo hacemos con un fetch a nuestra url backend
+  const response = await fetch(
+    `${urlBackend}/posts?categoria=${categoria}&lugar=${lugar}&direccion=${direccion}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
   const json = await response.json();
 
   if (!response.ok) {
@@ -159,36 +158,4 @@ export const votePostService = async ({ token, id, voto }) => {
   }
 
   return json;
-};
-
-export const getPostsByVotesService = async ({
-  token,
-  categoria,
-  lugar,
-  orden,
-}) => {
-  let url = `${urlBackend}/votos/`;
-
-  if (categoria && lugar && orden) {
-    url += `${orden}?categoria=${categoria}&lugar=${lugar}`;
-  } else if (lugar && orden) {
-    url += `${orden}?lugar=${lugar}`;
-  } else if (categoria && orden) {
-    url += `${orden}?categoria=${categoria}`;
-  } else {
-    url += `${orden}`;
-  }
-
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  // para obtener los posts filtrados y lo hacemos con un fetch a nuestra url backend
-  const json = await response.json();
-
-  if (!response.ok) {
-    throw new Error(json.message); // Ya no se ejecutaría la petición
-  }
-  return json.data;
 };
